@@ -7,7 +7,6 @@ include "connect.php";
     $hinhAnh = $_POST['hinhAnh'];
     $moTa = $_POST['moTa'];
 
-
 // check data
     $query = 'UPDATE `nhacungcap` SET `tenNcc`="'.$tenNcc.'",`diaChi`="'.$diaChi.'",`fax`="'.$fax.'",`hinhAnh`= "'.$hinhAnh.'", `moTa` = "'.$moTa.'" WHERE `maNcc` = "'.$maNcc.'"';
     $data = mysqli_query($scon, $query);    
