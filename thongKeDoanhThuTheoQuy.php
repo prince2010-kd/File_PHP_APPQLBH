@@ -1,7 +1,8 @@
 <?php 
 include "connect.php";
 $query = "SELECT *, SUM(tongTien) AS doanhThu, QUARTER(`ngayDatHang`) AS quy, YEAR(`ngayDatHang`) AS nam 
-          FROM `donhang` 
+          FROM `donhang` WHERE 
+        `trangThai` = 3
           GROUP BY YEAR(`ngayDatHang`), QUARTER(`ngayDatHang`)";
 $data = mysqli_query($scon, $query);
 $result = array();
