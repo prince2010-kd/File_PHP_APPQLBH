@@ -1,6 +1,7 @@
 <?php 
 include "connect.php";
-    $query = "SELECT *, SUM(tongTien) AS doanhThu, MONTH(`ngayDatHang`) AS thang FROM `donhang` GROUP BY YEAR(`ngayDatHang`), MONTH(`ngayDatHang`)";
+    $query = "SELECT *, SUM(tongTien) AS doanhThu, MONTH(`ngayDatHang`) AS thang FROM `donhang` WHERE 
+        `trangThai` = 3  GROUP BY YEAR(`ngayDatHang`), MONTH(`ngayDatHang`)";
     $data = mysqli_query($scon, $query);
     $result = array();
 
